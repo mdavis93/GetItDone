@@ -19,5 +19,13 @@ end
 User.create(
   email: 'test@getitdone.com',
   password: 'helloworld',
+  role: :member,
+  confirmed_at: Time.now
+)
+
+User.create(
+  email: 'admin@getitdone.com',
+  password: 'helloworld',
+  role: :admin,
   confirmed_at: Time.now
 )

@@ -17,7 +17,7 @@ group :development do
   # Use sqlite3 as the development database for Active Record
   gem 'sqlite3'
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
-  gem 'web-console', '~> 2.0'
+  gem 'web-console'
 end
 
 # Use Puma as the app server

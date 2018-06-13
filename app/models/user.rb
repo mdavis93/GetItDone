@@ -7,5 +7,5 @@ class User < ApplicationRecord
 
   before_save { self.role ||= :member }
 
-  enum role: [:member, :admin]
+  enum role: [:member, :premium, :admin]
 end
