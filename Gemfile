@@ -50,6 +50,7 @@ end
 gem 'bootstrap-sass'
 gem 'devise'
 gem 'figaro'
+gem 'font-awesome-sass', '~> 5.0.13'
 gem 'pundit'
 gem 'redcarpet'
 gem 'stripe'

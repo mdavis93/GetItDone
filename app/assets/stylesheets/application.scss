@@ -14,9 +14,25 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "font-awesome-sprockets";
+@import "font-awesome";
 
 @import "welcome";
 
 body {
   padding-top: 70px;
+}
+
+
+
+
+
+
+
+.font-2x {
+  font-size: 2em;
+}
+
+.no-overflow {
+  overflow: scroll;
 }
