@@ -1,42 +1,66 @@
 <div class="row">
-  <div class="col-md-4">
-    <h1 class="text-center"><%= @user.email %></h1>
-    <h4>Your last login was <%= time_ago_in_words(@user.last_sign_in_at) %> ago.</h4>
-    <p><%= link_to 'Change Your Password', edit_user_registration_path %></p>
-    <p>Total Lists: 5</p>
-    <p>Total Items: 32</p>
-    <p>Expiring Items: 4</p>
-  </div>
-  <div class="col-md-4 text-center">
-    <div class="panel panel-primary panel-shadow no-overflow">
-      <div class="panel-heading">
-        <div class="row">
-          <div class="col-sm-3">
-            <i class="fa fa-list fa-4x"></i>
-          </div>
-          <div class="col-sm-9 text-right">
-            <div class="font-2x">You Have <code>5</code> Lists</div><br>
+  <div class="col-xs-12">
+    <% if current_user %>
+      <div class="panel panel-info no-overflow">
+        <div class="panel-heading">
+          <div class="panel-title text-center">
+            <h1>Welcome Back, <%= @username %>!</h1>
           </div>
         </div>
-        <div class="row">
-          <div class="col-md-12">
-            <hr>
-            <button type="button" class="btn btn-default btn-block">Name of List 1</button>
-            <button type="button" class="btn btn-default btn-block">Name of List 2</button>
-            <button type="button" class="btn btn-default btn-block">Name of List 3</button>
-            <button type="button" class="btn btn-default btn-block">Name of List 4</button>
-            <button type="button" class="btn btn-default btn-block">Name of List 5</button>
-            <button type="button" class="btn btn-default btn-block">Name of List 6</button>
-            <button type="button" class="btn btn-default btn-block">Name of List 7</button>
-            <button type="button" class="btn btn-default btn-block">Name of List 8</button>
-            <button type="button" class="btn btn-default btn-block">Name of List 9</button>
-            <button type="button" class="btn btn-default btn-block">Name of List 10</button>
+        <div class="panel-body">
+          <div class="col-md-4 border-right-dashed">
+            <h6>Your last visit was <%= time_ago_in_words(@user.last_sign_in_at) %> ago.</h6>
+            <p><i class="fas fa-key fa-fw"></i> <%= link_to 'Change Your Password', edit_user_registration_path %></p>
+            <p><i class="far fa-square fa-fw"></i> Items: <%= @user.items.all.count %></p>
+            <p>
+              <span class="fa-stack fa-fw alert_layer">
+                <i class="fas fa-square fa-stack-2x"></i>
+                <i class="fas fa-times fa-stack-1x fa-inverse"></i>
+              </span> Expiring Items: <%= @user.items.all.where('expires_at < ?', 2.days).count %>
+            </p>
+          </div>
+          <div class="col-md-8">
+            <h5 class="text-center mar-top-0">New To-Do Task</h5>
+            <form class="form-horizontal">
+              <div class="form-group">
+                <label for="todo_title" class="col-sm-2">ToDo Taks</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" id="todo_title" placeholder="ToDo Task" />
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                  <button type="submit" class="btn btn-default">Add ToDo Item</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+<div class="container todo-group">
+  <div class="row">
+    <div class="col-xs-12">
+      <h1>Your Tasks</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4 col-sm-12 text-center">
+      <div class="panel panel-primary panel-shadow no-overflow">
+        <div class="panel-heading">
+          <div class="row">
+            <div class="col-sm-2">
+              <i class="far fa-square fa-2x unfinished_task toggle_task"></i>
+            </div>
+            <div class="col-sm-10 text-right">
+              <div class="font-2x text-center">Book Writing</div>
+              <div class="alert <%= get_expiring_alert_color(6.days) %> text-center no-pad">Expires in 7 days.</div>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-  <div class="col-md-4 text-center">
-
   </div>
 </div>
