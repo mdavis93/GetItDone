@@ -20,11 +20,7 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <% if user_signed_in? %>
-              <%= link_to 'GetItDone', authenticated_root_path, class: 'navbar-brand pacifico' %>
-            <% else %>
-              <%= link_to 'GetItDone', unauthenticated_root_path, class: 'navbar-brand pacifico' %>
-            <% end %>
+              <%= link_to 'GetItDone', root_path, class: 'navbar-brand pacifico' %>
           </div>
 
           <div class="collapse navbar-collapse" id="navbar-collapse-1">

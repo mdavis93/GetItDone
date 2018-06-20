@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-md-4">
-    <h1 class="text-center"><%= @user.email %></h1>
+    <h1 class="text-center"><%= @user.email if @user %></h1>
     <h4>Your last login was <%= time_ago_in_words(@user.last_sign_in_at) %> ago.</h4>
     <p><%= link_to 'Change Your Password', edit_user_registration_path %></p>
     <p>Total Lists: 5</p>

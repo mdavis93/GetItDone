@@ -1,13 +1,9 @@
 Rails.application.routes.draw do
   get 'users/show'
 
-  devise_for :users
-  authenticated :user do
-    root to: 'users#show', as: :authenticated_root
-  end
-  unauthenticated :user do
-    root 'welcome#index', as: :unauthenticated_root
-  end
+  devise_for :users, path: 'account'
+  resources :users
+  root 'welcome#index'
   get 'about' => 'welcome#about'
 
 
