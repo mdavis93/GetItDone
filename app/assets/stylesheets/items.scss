@@ -5,3 +5,14 @@
 .todo_item {
   height: 130px;
 }
+
+a .far {
+  text-decoration: none;
+  color: white;
+  top: 0;
+  left: 18px;
+
+  &:hover {
+    color: black;
+  }
+}

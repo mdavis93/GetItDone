@@ -3,7 +3,9 @@
     <div class="panel-heading">
       <div class="row">
         <div class="col-sm-2">
-          <i class="far fa-square fa-2x unfinished_task toggle_task"></i>
+          <%= link_to [User.find(item.user_id), item], method: :delete do %>
+            <i class="far fa-check fa-2x"></i>
+          <% end %>
         </div>
         <div class="col-sm-10 text-right">
           <div class="font-2x text-center"><%= item.name %></div>
