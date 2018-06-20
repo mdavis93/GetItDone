@@ -29,3 +29,12 @@ User.create(
   role: :admin,
   confirmed_at: Time.now
 )
+
+6.times do
+  Item.create(
+    name: Faker::Lorem.words(2).join(' '),
+    user_id: User.find_by(email: 'test@getitdone.com').id
+  )
+end
+
+puts Item.all.count.to_s + " items created"
