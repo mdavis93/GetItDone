@@ -1,0 +1,4 @@
+$('#items').html("<%= j (render @items) %>");
+$('#total_items').html("<i class='far fa-square fa-fw'></i> Items: <%= @user.items.all.count %>");
+$('#todo_form').slideUp(350);
+$('#new_todo_name').val('');

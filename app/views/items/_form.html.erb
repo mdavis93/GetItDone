@@ -1,0 +1,4 @@
+<%= form_with model: [@user,@item], class: 'new_item_form' do |f| %>
+  <%= f.text_field :name, maxlength: 15 %>
+  <%= f.button :submit %>
+<% end %>

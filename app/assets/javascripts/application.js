@@ -14,3 +14,9 @@
 //= require rails-ujs
 //= require bootstrap-sprockets
 //= require_tree .
+
+$(document).ready(function() {
+    setTimeout(function() {
+        $('#flash_msg').remove();
+    }, 2000);
+});

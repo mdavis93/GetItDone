@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
 
-  get 'users/show'
+  devise_for :users, path: 'accounts'
 
-  devise_for :users do
-    resources :items, only: :create
+  resources :users do
+    resources :items, only: [:new, :create]
   end
 
   authenticated :user do

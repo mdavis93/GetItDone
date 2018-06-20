@@ -14,7 +14,7 @@ ActiveRecord::Schema.define(version: 20180614062643) do
 
   create_table "items", force: :cascade do |t|
     t.string "name", null: false
-    t.date "expires_at", null: false
+    t.datetime "expires_at", null: false
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
