@@ -3,7 +3,7 @@
     <div class="panel-heading">
       <div class="row">
         <div class="col-sm-2">
-          <%= link_to [@user, @item], controller: :users, method: :delete do %>
+          <%= link_to user_item_url(id: item.id, user_id: @user.id), method: :delete, remote: true do %>
           <i class="fas fa-check fa-3x toggle_task task_complete"></i>
             <% end %>
         </div>
