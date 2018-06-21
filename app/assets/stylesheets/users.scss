@@ -7,10 +7,14 @@
   color: red;
 }
 .border-right-dashed {
-  @media screen and (min-device-width: 600px) {
+  border-bottom: dashed 1px skyblue;
+  margin-bottom: 10px;
+  @media screen and (min-width: 600px) {
+    margin: 0;
+    border-bottom: none;
+    border-right: dashed 1px skyblue;
 
-}
-  border-right: dashed 1px skyblue;
+  }
 }
 .finished_task {
   color: royalblue;
@@ -30,7 +34,7 @@
   margin-top: 10px;
 }
 
-.todo-group > .row > .col-md-4 {
+.todo-group > .row > #items > .col-md-4 {
   transition: .15s linear;
 
   &:hover {
@@ -39,7 +43,7 @@
   }
 }
 
-.todo-group > .row {
+.todo-group > .row > #items {
   &:hover > div {
     opacity: 0.8;
   }

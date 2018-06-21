@@ -5,3 +5,21 @@
 .todo_item {
   height: 130px;
 }
+
+.toggle_task {
+  transition: 0.2s;
+  position: absolute;
+  left: 15px;
+  top: 15px;
+  color: rgba(81, 81, 81, 0.34);
+
+  &:hover {
+    cursor: pointer;
+    transition: 0.1s;
+    top: 12px;
+    color: rgba(0, 255, 0, 1);
+    text-shadow:
+            0 5px 0 #008f00,
+            0 10px 15px rgba(17, 98,42, 0.86);
+  }
+}
