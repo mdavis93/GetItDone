@@ -19,24 +19,24 @@
               </span> Expiring Items: <%= @user.items.all.where('expires_at < ?', Time.now + 2.days).count %>
             </p>
           </div>
-          <div class="col-md-8">
+          <div class="col-md-4">
             <h5 class="text-center mar-top-0">New To-Do Task</h5>
-            <div id="todo_form"></div>
-            <!--
-            <form class="form-horizontal">
-              <div class="form-group">
-                <label for="todo_title" class="col-sm-2">ToDo Taks</label>
-                <div class="col-sm-10">
-                  <input type="text" class="form-control" id="todo_title" placeholder="ToDo Task" />
+            <div class="col-sm-12 text-center todo_item">
+              <div class="panel panel-primary panel-shadow no-overflow">
+                <div class="panel-heading">
+                  <div class="row">
+                    <div class="col-sm-12">
+                      <div class="font-2x text-center">
+                        <%= form_with model: [@user,@item], class: 'new_item_form form_control' do |f| %>
+                          <%= f.text_field :name, maxlength: 15, id: 'new_todo_name', class: 'form-control input-lg' %>
+                          <%= f.button :submit, class: 'btn btn-default' %>
+                        <% end %>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
-              <div class="form-group">
-                <div class="col-sm-offset-2 col-sm-10">
-                  <button type="submit" class="btn btn-default">Add ToDo Item</button>
-                </div>
-              </div>
-            </form>
-            -->
+            </div>
           </div>
         </div>
       </div>
@@ -50,25 +50,6 @@
     </div>
   </div>
   <div class="row">
-    <div class="col-md-4 col-sm-12 text-center todo_item">
-      <div class="panel panel-primary panel-shadow no-overflow">
-        <div class="panel-heading">
-          <div class="row">
-            <div class="col-sm-2">
-              <i class="far fa-square fa-2x unfinished_task toggle_task"></i>
-            </div>
-            <div class="col-sm-10 text-right">
-              <div class="font-2x text-center">
-                <%= form_with model: [@user,@item], class: 'new_item_form form_control' do |f| %>
-                  <%= f.text_field :name, maxlength: 15, id: 'new_todo_name', class: 'form-control input-lg' %>
-                  <%= f.button :submit, class: 'btn btn-default' %>
-                <% end %>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
     <div id="items">
       <%= render @items %>
     </div>

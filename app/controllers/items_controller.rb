@@ -11,10 +11,9 @@ class ItemsController < ApplicationController
     @item = current_user.items.create(item_params)
 
     if @item.save
-      puts "Success!"
+      puts 'Success!'
     else
-      byebug
-      puts "Error"
+      puts 'Error'
       format.json{ render json: @item.errors.full_messages, status: :unprocessable_entity}
       puts @item.inspect
     end
