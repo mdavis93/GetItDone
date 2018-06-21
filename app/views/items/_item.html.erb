@@ -7,7 +7,7 @@
         </div>
         <div class="col-sm-10 text-right">
           <div class="font-2x text-center"><%= item.name %></div>
-          <div class="alert <%= get_expiring_alert_color(time_ago_in_words(item.expires_at)) %> text-center no-pad">Expires in <%= time_ago_in_words(item.expires_at) %>.</div>
+          <div class="alert <%= get_expiring_alert_color(time_ago_in_words(item.expires_at)) %> text-center no-pad">Expires in <%= time_ago_in_words(item.expires_at).capitalize %>.</div>
         </div>
       </div>
     </div>
