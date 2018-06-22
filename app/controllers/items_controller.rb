@@ -37,6 +37,6 @@ class ItemsController < ApplicationController
   end
 
   def item_params
-    params.require(:item).permit(:user_id, :name, :expires_at)
+    params.require(:item).permit(:user_id, :name, :expires_at, :created_at)
   end
 end
