@@ -28,7 +28,7 @@
                     <div class="col-sm-12">
                       <div class="font-2x text-center">
                         <%= form_with model: [@user,@item], class: 'new_item_form form_control' do |f| %>
-                          <%= f.text_field :name, maxlength: 15, id: 'new_todo_name', class: 'form-control input-lg' %>
+                          <%= f.text_field :name, maxlength: 20, id: 'new_todo_name', class: 'form-control input-lg' %>
                           <%= f.button :submit, class: 'btn btn-default' %>
                         <% end %>
                       </div>
