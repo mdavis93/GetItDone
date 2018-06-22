@@ -28,6 +28,9 @@
           </div>
 
           <div class="collapse navbar-collapse" id="navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-left">
+              <li class="active"><%= link_to 'GitHub Repo', 'https://github.com/mdavis93/GetItDone', target: '_blank' %></li>
+            </ul>
             <ul class="nav navbar-nav navbar-right">
               <% if !user_signed_in? %>
                 <li><a href="#">Features</a></li>
