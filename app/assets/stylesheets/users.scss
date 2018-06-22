@@ -2,10 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-
-.alert_layer {
-  color: red;
-}
 .border-right-dashed {
   border-bottom: dashed 1px skyblue;
   margin-bottom: 10px;
@@ -16,11 +12,24 @@
 
   }
 }
+.border-left-dashed {
+  border-top: dashed 1px skyblue;
+  margin-bottom: 10px;
+  @media screen and (min-width: 600px) {
+    margin: 0;
+    border-top: none;
+    border-left: dashed 1px skyblue;
+
+  }
+}
 .finished_task {
   color: royalblue;
 }
 .mar-top-0 {
   margin-top: 0;
+}
+.new_item {
+  padding-top: 25px;
 }
 .no-pad {
   padding: 0;

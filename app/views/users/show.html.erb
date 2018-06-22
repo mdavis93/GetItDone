@@ -8,26 +8,22 @@
           </div>
         </div>
         <div class="panel-body">
-          <div class="col-md-4 border-right-dashed">
+          <div class="col-md-4">
             <h6>Your last visit was <%= time_ago_in_words(@user.last_sign_in_at) %> ago.</h6>
             <p><i class="fas fa-key fa-fw"></i> <%= link_to 'Change Your Password', edit_user_registration_path %></p>
             <p id="total_items"><i class="far fa-square fa-fw"></i> Items: <%= @user.items.all.count %></p>
-            <p>
-              <span class="fa-stack fa-fw alert_layer">
-                <i class="fas fa-square fa-stack-2x"></i>
-                <i class="fas fa-times fa-stack-1x fa-inverse"></i>
-              </span> Expiring Items: <%= @user.items.all.where('expires_at < ?', Time.now + 2.days).count %>
-            </p>
+            <p><i class="fas fa-times fa-fw text-danger"></i>Expiring Items: <%= @user.items.all.where('expires_at < ?', Time.now + 2.days).count %></p>
           </div>
-          <div class="col-md-4">
-            <h5 class="text-center mar-top-0">New To-Do Task</h5>
-            <div class="col-sm-12 text-center todo_item">
+          <div class="col-md-4 border-left-dashed border-right-dashed">
+            <h3 class="text-center mar-top-0">New To-Do Task</h3>
+            <p class="text-justify">To create a new task item, enter the name below and click <strong>[SUBMIT]</strong> or press <strong>[ENTER]</strong>.  All tasks will expire seven days after creation.</p>
+            <div class="col-sm-12 text-center todo_item new_item">
               <div class="panel panel-primary panel-shadow no-overflow">
                 <div class="panel-heading">
                   <div class="row">
                     <div class="col-sm-12">
                       <div class="font-2x">
-                        <%= form_with model: [@user,@item], class: 'new_item_form' do |f| %>
+                        <%= form_with model: [@user,@item] do |f| %>
                           <div class="input-group">
                             <%= f.text_field :name, maxlength: 18, id: 'new_todo_name', class: 'form-control input-lg' %>
                             <span class="input-group-btn">
