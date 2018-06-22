@@ -26,10 +26,14 @@
                 <div class="panel-heading">
                   <div class="row">
                     <div class="col-sm-12">
-                      <div class="font-2x text-center">
-                        <%= form_with model: [@user,@item], class: 'new_item_form form_control' do |f| %>
-                          <%= f.text_field :name, maxlength: 20, id: 'new_todo_name', class: 'form-control input-lg' %>
-                          <%= f.button :submit, class: 'btn btn-default' %>
+                      <div class="font-2x">
+                        <%= form_with model: [@user,@item], class: 'new_item_form' do |f| %>
+                          <div class="input-group">
+                            <%= f.text_field :name, maxlength: 18, id: 'new_todo_name', class: 'form-control input-lg' %>
+                            <span class="input-group-btn">
+                              <%= f.button :submit, class: 'btn btn-lg btn-default' %>
+                            </span>
+                          </div>
                         <% end %>
                       </div>
                     </div>
